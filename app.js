@@ -1,6 +1,7 @@
 const $ = id => document.getElementById(id);
 const lanes = ['A','B','C','D'].map((id,i)=>({id, vehicles:[47,8,31,4][i], queue_length:[29,6,20,3][i], avg_speed:8, avg_wait:20}));
-const base = location.port === '8000' ? '' : 'http://127.0.0.1:8000';
+const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+const base = local && location.port !== '8000' ? 'http://127.0.0.1:8000' : '';
 let emergency = {active:false}, greens = [], phase = 0, remaining = 0, online = false, busy = false;
 async function request(path, data) {
   const response = await fetch(base + path, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data || {}), signal:AbortSignal.timeout(5000)});
