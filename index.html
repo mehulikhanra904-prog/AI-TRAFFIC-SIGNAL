@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlowGuard · Adaptive Signals</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<main class="shell">
+  <header class="topbar"><div class="brand"><div class="brandmark">✦</div><div><strong>FLOWGUARD</strong><span>AI TRAFFIC CONTROL</span></div></div><div class="live"><i></i> LIVE SIMULATION <span id="clock">00:00:00</span></div></header>
+  <section class="hero"><div><p class="eyebrow">INTERSECTION 04 · SIMULATED INPUTS</p><h1>Adaptive signals.<br><em>Safer streets.</em></h1><p class="sub">Trained-model timing with a manual emergency override. Demonstration only: no live cameras or SUMO connection.</p></div><div class="hero-stat"><span class="pulse">●</span><small>CONTROLLER STATUS</small><b id="modeLabel">CONNECTING</b><span id="modeCaption">Waiting for API</span></div></section>
+  <section class="grid">
+    <div class="card traffic"><div class="card-head"><div><p class="eyebrow">DEMO TRAFFIC INPUTS</p><h2>Intersection overview</h2></div><span class="tag">MODEL API</span></div><div id="lanes" class="lanes"></div><div class="legend"><span>Bars: vehicle counts</span><span>Predictions refreshed every 5s</span></div></div>
+    <aside class="card signal"><div class="card-head"><div><p class="eyebrow">DECISION LAYER</p><h2>Signal controller</h2></div><span id="signalTag" class="tag success">NORMAL AI</span></div><div class="junction"><div class="road vertical"></div><div class="road horizontal"></div><div class="center-light"><span id="lightNorth"></span><span id="lightEast"></span><span id="lightSouth"></span><span id="lightWest"></span></div><label class="north">A</label><label class="east">B</label><label class="south">C</label><label class="west">D</label></div><div class="signal-readout"><div><small>ACTIVE PHASE</small><b id="phase">A · NORTHBOUND</b></div><div><small>TIME REMAINING</small><b id="remaining">42s</b></div></div></aside>
+  </section>
+  <section class="priority card"><div class="priority-copy"><div class="ambulance">✚</div><div><p class="eyebrow">PRIORITY OVERRIDE</p><h2>Emergency vehicle corridor</h2><p id="emergencyText">No emergency vehicles detected. Normal AI optimization is in control.</p></div></div><div class="priority-controls"><select id="emergencyLane"><option value="A">Lane A · North</option><option value="B">Lane B · East</option><option value="C">Lane C · South</option><option value="D">Lane D · West</option></select><button id="emergencyBtn">Simulate ambulance</button></div></section>
+  <footer><span><b>MODEL</b> Random Forest · synthetic training data</span><span><b>PIPELINE</b> Demo inputs → API → Model → Visualization</span><span id="eventLog">Connecting</span></footer>
+</main><script src="app.js"></script>
+</body></html>
