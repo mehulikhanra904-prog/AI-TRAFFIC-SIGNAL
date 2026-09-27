@@ -1,5 +1,9 @@
 # Adaptive Traffic Signal Optimizer
 
+## Live Demo
+
+[Open the website on Vercel](https://ai-traffic-signal-jet.vercel.app)
+
 Hackathon-ready prototype combining adaptive signal timing with an emergency
 priority override. The browser dashboard is a no-build static frontend, and
 the FastAPI service exposes the same decision layer for SUMO/TraCI or YOLO
